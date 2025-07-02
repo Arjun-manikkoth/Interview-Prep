@@ -1,0 +1,275 @@
+What is javascript ?
+ Javascript is a programming language used to create interactive webpages with dynamic content updates.
+
+Features of JS:-
+
+* Sychronous (completes one task at a time)
+* Single threaded (One thread for execution)
+* Weakly/Dynamically typed (Data type assigned at run time)
+* Interpretor (transpiles and executes line by line)
+* Client side scripting (runs on client browser without needing to communicate with the server)
+* Event driven (Can respond to user actions in real time)
+
+
+Programming Paradigmas in Javascript
+
+* Imperative Programming (The how): Focuses on how to perform tasks by controlling the flow of computation.This includes procedural and object-oriented programming,often using constructs like async/await to handle async actions
+
+* Declarative Programming (The what) : Focuses on what should be done rather than how it is done.It emphasizes describing the desired result, such as with arrow functions, without detailing the steps to achieve it 
+
+
+Applications of JS
+
+* Web development
+* Web applications
+* Server applications
+
+Limitations of JS
+
+* Security risks : JS can be prone to cross-site scripting (XSS), where malicious scripts are injected into website to steal data (<img><object><script>)
+* Perfomance : JS is slower than traditional languages for complex tasks.
+* Complexity : For advanced js core concepts like objects, both client and server side scripting needed.
+* Weak error handling and type checking : Weakly typed , can cause issues in run time
+
+
+Why JavaScript is known as a lightweight programming language ?
+JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax, and ease of implementation. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Datatypes in JS (9)
+
+        Immutable(Primitive)                      Mutable (Derived)
+       
+        String                                    object
+        Boolean                                   array
+        Number                                    function
+        Bigint (2^53-1)
+        null
+        undefined
+
+typeof : operator to determine type, eg:- typeof str
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Variables
+
+A variable is like a container that holds data that can be reused or updated later in the programming.
+
+3 types of variable declarations
+
+let :
+
+* block scoped 
+* Cannot be accesed before initialisation
+* cannot redeclared in the same scope
+
+const : 
+
+* block scoped
+* cannot be reassigned
+
+var :
+
+* function scoped/globally scoped
+* reassignment allowed
+
+-------------------------------------------------------------------------------------------------------------------
+
+What is hoisting?
+
+Hoisting in JavaScript is a behavior where variable and function declarations are moved to the top of their scope
+before code execution. This means that you can use variables and functions before they are declared in your code without causing an error. 
+
+What is temporal dead zone?
+
+The Temporal Dead Zone refers to the period between the entering of a scope and the actual declaration of a variable using let or const. 
+During this period, the variable is in an "uninitialized" state and accessing it will result in a ReferenceError.
+
+* The TDZ starts from the beginning of the block until the variable is declared.
+* Variables declared with let and const are hoisted but not initialized.
+* Accessing the variable in the TDZ results in a ReferenceError.
+* var declarations do not have a TDZ and are initialized as undefined.
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+ES6 Features (ECMAScript 2015)
+
+1. `let` and `const` (Block-scoped variable declarations)  
+2. Arrow Functions  
+3. Template Literals  
+4. Default Parameters  
+5. Destructuring Assignment (Array & Object)  
+6. Rest and Spread Operators  
+7. Object Property Shorthand  
+8. Enhanced Object Literals (Method shorthand, computed properties)  
+9. Classes  
+10. Modules (`import` / `export`)  
+11. Promises  
+12. Symbol  
+13. Iterators and `for...of` loop  
+14. Map and Set  
+15. WeakMap and WeakSet  
+16. Generators  
+17. New Built-in Methods (e.g., `Array.find()`, `Object.assign()`)  
+18. Tail Call Optimization (in strict mode — not widely supported)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+what is use strict in js?
+
+In JavaScript, "use strict" is a directive that enables strict mode, enforcing stricter parsing and error handling. It helps to write cleaner, more secure code by preventing certain actions and throwing errors for mistakes that would otherwise be ignored.
+Strict mode can be applied to an entire script or to individual functions. To enable it globally, "use strict" should be placed at the beginning of the script. To enable it locally, it should be placed at the beginning of a function body.
+
+Enabling strict mode offers several benefits:
+
+* Prevents the use of undeclared variables, which can help avoid accidental global variables.
+
+* Disallows assigning values to read-only properties or deleting undeletable properties, which can prevent errors.
+
+* Throws errors for duplicate parameter names in function declarations, which can help catch mistakes.
+
+* Disallows the with statement, which can make code harder to understand and optimize.
+
+* Makes eval() safer by creating a separate scope for variables declared within it.
+
+* Prevents the use of this in functions called as regular functions (not as methods or constructors), which can avoid unexpected behavior.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+* Operator precedence in JS
+
+( * ) and ( / ) have higher precedence than ( + ) and ( - )
+
+Ternary operator (a?b:c)
+
+unary operators ++i /--i
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Loops
+
+
+1️⃣ for loop  
+→ Repeats a block of code a specific number of times.
+
+Example:
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+
+2️⃣ while loop  
+→ Repeats as long as the condition is true.
+
+Example:
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+
+3️⃣ do...while loop  
+→ Executes the block at least once, and then repeats as long as condition is true.
+
+Example:
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+
+
+4️⃣ for...of loop  
+→ Iterates over iterable objects (Arrays, Strings, Maps, Sets)
+
+Example:
+const arr = [10, 20, 30];
+for (const value of arr) {
+  console.log(value);
+}
+
+
+5️⃣ for...in loop  
+→ Iterates over enumerable properties of an object (index)
+
+Example:
+const obj = {a: 1, b: 2, c: 3};
+for (const key in obj) {
+  console.log(key, obj[key]);
+}
+
+-------------------------------------------------------------------------------------------------------------------
+
+what are closures?
+
+A function along with its lexical scope is called as closure
+
+
+Closures has historically been used to:
+
+Create private variables
+Preserve state between function calls
+Simulate block-scoping before let and const existed
+Implement certain design patterns like currying and memoization
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+* local vs global execution context ?
+
+What is an execution context ?
+
+Execution context in JavaScript defines the environment where code is executed. It manages variables, functions, and objects accessible within the current scope. There are two main types of execution contexts: global and local (function). 
+
+Global Execution Context
+The global execution context is created when a JavaScript script starts. It represents the global scope, making variables and functions declared outside any function accessible throughout the script. In browsers, the global object is window, and in Node.js, it's global. The this keyword in the global context refers to the global object. 
+
+Local (Function) Execution Context
+A new local execution context is created each time a function is called. It provides a separate environment for the function's variables and parameters, ensuring they don't interfere with other parts of the code. The this keyword within a function context can have different meanings depending on how the function is called.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+what is DTO pattern in programming? 
+
+DTO is data transfer object that carries data between processes 
+
+basically class or interface which has specific dat keys in it
+
+Why use DTO?
+→ Suppose we have a data object with specific keys in it used in controllers, then the same passed in the service.
+
+→ As your application grows it will used repeatedly in many places.
+
+→ So the standard is to create a DTO Class and Typescript or Java will be of type DTO
+
+Reason 1: Not repeated in multiple code files
+
+→ In future, if more keys are added or object keys are modified changing in one place will be easier instead of doing it in multiple places in files.
+
+Reason 2: Single Source of Truth in one file

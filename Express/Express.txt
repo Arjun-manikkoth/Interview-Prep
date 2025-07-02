@@ -1,0 +1,18 @@
+An http request is a message sent by a client (eg:- browser a mobile)
+
+Components of a HTTP request
+
+1.Request Line
+
+ *  HTTP Method
+ *  HTTP Version eg:-http/1.1 http/2 or http/3
+ *  Request URI eg:- /api/users
+
+2. Headers :- Provides metadata about the request
+
+ * User agent - identifies client software making request,browser,os device details it helps server to server device based layout.
+ * Authorization :- provide credentiasls to authorise the client 
+        1. Basic :- sends base64 encoded username:password
+        2. Bearer :- Uses a token for secure authentication
+
+3. Message body :- to send data in the body to the backend.

@@ -1,0 +1,236 @@
+what is a database?
+A database is an organised collection of data for efficient retrieval and storage.
+
+
+what is dbms?
+dbms is a software which acts as an interface by connecting the users and the database by providing features like update add delete and limit user access.
+
+Relational(sql - Tabular database) vs non relational databases(nosql - different data models)?
+
+Relational :-
+
+Data is stored in a tabular format
+Vertically scalable
+Strict schema
+
+Nonrelational:-
+
+Data is stored in other formats like graphs ,key value pairs,documents
+Horizontally scalable
+Flexible schema
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+What are capped collections?
+Capped collections are basically fixed size collections.
+Creating a capped collection in MongoDB involves using the createCollection() method to define a collection with a fixed size and a maximum number of documents. Capped collections automatically overwrite old documents when they reach their size limit, making them ideal for use cases like logging or caching where the most recent data is most important.
+
+quick revision mongodb refer :- ht"remove this"tps://dev.to/msn2106/revise-all-basics-of-mongodb-in-10-minutes-d1g
+
+
+what is mongodb?
+
+MongoDB is a powerful, open-source, NoSQL document-oriented database, widely recognized for its scalability and flexibility. It’s written in C++ and uses BSON (a binary representation of JSON) for storing data.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+two types of scans:-
+
+* Index scan
+* collection scan
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+Types of indexing
+
+
+* Single Field indexing
+* Compound indexing
+* Multikey indexing (Indexing done on an array field)
+* Geospatial index (Improve perfomance for queries on geospatial cordinate data)
+* Text index (specially for string search)
+* Hashed indexing 
+* Clustered index (specify order in which the clustered collection store data)
+* TTL indexing 
+
+
+What is a clustered collection? (introduced in 5.3)
+
+In MongoDB, a clustered collection is a special type of collection where the documents are stored on disk in the same order as a specific indexed field, usually the _id field. This is different from regular collections where documents are stored in arbitrary order and indexes are maintained separately.
+
+eg:- 
+
+ db.createCollection("logs", {
+  clusteredIndex: {
+    key: { createdAt: 1 },   // Clustered by `createdAt`
+    unique: true             // Must be unique
+  }
+})
+
+creating a clustered collection with createdAt field (clustered key)can improve query perfomance 
+
+--------------------------------------------------------------------------------------------------------------------
+
+⚖️ Sharding (Horizontal Scaling)
+
+Sharding divides large data sets across multiple machines.
+MongoDB uses a shard key to distribute documents.
+A query router (mongos) sends requests to appropriate shards.
+Each shard is a replica set ensuring redundancy and high availability.
+
+replica set ?
+
+In MongoDB, a replica set is a group of mongod processes (database servers) that maintain the same data set, ensuring data redundancy and high availability. It provides a mechanism for automatic failover and disaster recovery by replicating data across multiple servers.
+
+
+Journaling in mongodb:-
+
+In MongoDB, journaling acts as a form of Write-Ahead Logging (WAL), ensuring data durability by recording write operations before they are applied to the data files. This mechanism safeguards against data corruption due to events like system crashes or power outages, allowing the database to recover to a consistent state. 
+
+Mongodb traditionally doesnot support joins but now allows joins using lookup in the aggregation pipeline.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🏗️ How MongoDB Handles Millions of Incoming API Requests
+MongoDB is designed for high concurrency and horizontal scalability. Here's how it deals with massive loads:
+
+🚀 Efficient Indexing
+
+MongoDB supports single field, compound, text, geospatial, and hashed indexes.
+
+It automatically uses indexes to quickly locate documents.
+You can create indexes on frequently queried fields to reduce read latency.
+Background indexing allows index creation without blocking operations.
+
+⚖️ Sharding (Horizontal Scaling)
+
+Sharding divides large data sets across multiple machines.
+MongoDB uses a shard key to distribute documents.
+A query router (mongos) sends requests to appropriate shards.
+Each shard is a replica set ensuring redundancy and high availability.
+Sharding helps:
+
+Balance read/write load
+Store more data than one server can handle
+Achieve linear horizontal scaling
+
+
+------------------------------------------------------------------------------------------------------------------
+
+🧠 Connection Management
+
+MongoDB uses non-blocking I/O and asynchronous processing.
+Connection pooling is supported by most drivers.
+Caching and efficient memory management via WiredTiger engine.
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+What is aggregation in mongodb?
+
+Aggregation is a way of processing large number of documents in a collection by passing them through mulitple stages called pipeline
+for analysing the data and basically helps businesses.
+
+
+there is 100 mb limit for each stage if it exceeds this ram capacity it will throw an error.
+
+
+What is cursor in mongodb?
+
+A cursor is an obect returned by operations like find() that references a set of documents matching a query. Instead of returning whole documents , it is returned as batches (basically cursor is pointer which points to the loation of each documents).
+here mongodb itself iterates automatically through the cursor and return documents...else we have to do it as manual.(cursor is discarded after 10 minutes)
+
+
+Serialisation and deserialization
+
+Serialization converts objects into BSON format for storage, while deserialization reconstructs the objects from BSON when retrieved
+
+What is mongodump?
+
+mongodump is a utility that creates a binary export of a database's contents. mongodump can export data from:
+
+* Standalone deployments
+* Replica sets
+* Sharded clusters
+* Flex clusters
+
+What is mongo restore?
+
+mongo restore allows to import the data that was exported from mongodump
+
+-----------------------------------------------------------------------------------------------------------------------
+ 
+ universities collection:-
+ {
+  country : 'Spain',
+  city : 'Salamanca',
+  name : 'USAL',
+  location : {
+    type : 'Point',
+    coordinates : [ -5.6722512,17, 40.9607792 ]
+  },
+  students : [
+    { year : 2014, number : 24774 },
+    { year : 2015, number : 23166 },
+    { year : 2016, number : 21913 },
+    { year : 2017, number : 21715 }
+  ]
+}
+{
+  country : 'Spain',
+  city : 'Salamanca',
+  name : 'UPSA',
+  location : {
+    type : 'Point',
+    coordinates : [ -5.6691191,17, 40.9631732 ]
+  },
+  students : [
+    { year : 2014, number : 4788 },
+    { year : 2015, number : 4821 },
+    { year : 2016, number : 6550 },
+    { year : 2017, number : 6125 }
+  ]
+}
+
+
+courses collection :-
+
+{
+  university : 'USAL',
+  name : 'Computer Science',
+  level : 'Excellent'
+}
+{
+  university : 'USAL',
+  name : 'Electronics',
+  level : 'Intermediate'
+}
+{
+  university : 'USAL',
+  name : 'Communication',
+  level : 'Excellent'
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Views
+
+A MongoDB view is a read-only queryable object whose contents are defined by an aggregation pipeline on other collections or views.
+
+Mongodb has 3 environments
+
+* atlas
+* enterprise
+* community
+
+ ------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ The Query API comprises two ways to query data in MongoDB:
+
+* CRUD operations
+* Aggregation pipelines
+

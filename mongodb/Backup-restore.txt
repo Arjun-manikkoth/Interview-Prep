@@ -1,0 +1,11 @@
+# Create a backup (from terminal, not mongosh)Add commentMore actions
+mongodump --db=sample --out=/backup/path
+
+# Restore from backup
+mongorestore --db=sample /backup/path/sample
+
+# Export collection to JSON
+mongoexport --db=sample --collection=users --out=users.json
+
+# Import JSON to collection
+mongoimport --db=sample --collection=users --file=users.json

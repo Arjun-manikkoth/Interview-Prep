@@ -1,0 +1,122 @@
+Aggregation expressions
+
+Expressions refers to the name of the field in input.
+
+
+Different aggregation stages
+
+
+1. Match stage
+
+db.universities.aggregate([{$match:{country:'Spain',city:'salamanca'}}])
+
+db.universities.aggregate([{$match:{age:{$gt:25}}}])//age>25
+
+db.universities.aggregate([{$match:{$or[{gender:"male"},{}"female"]}}])
+
+
+
+2.Group stage (group documents based on a certain criteria)
+
+{$group:{_id:<expression>,<field1>:{<accumulator1>:<expression1>},....}}
+
+{$group:{_id:"$age}}
+
+{$group:{_id:{age:"$age,gender:"$gender"}}}
+
+{$group:{_id:{age:"$company.job.title"}}}
+
+
+3. Count stage (Always used at the last stage)
+
+aggregate([{$count: "name"}]) //just counts the total documents after a stage a outputs them as name:1000
+
+
+group stage + count stage
+
+aggregate([{$match:{age:{$gt:25}}},{$group:{_id:"$age"}},{$count:"total}]) //outputs total :23
+
+
+4. Sort stage 
+
+{$sort:{name:-1}}
+
+
+5. Project stage(it is used to add or exclude fields and rename fields)
+
+{$project:{name:1}}
+
+{$project:{name:1,newAge:"$age"}} //renames the old field to new
+
+
+5. $limit stage
+
+{$limit:<number>}
+
+{$limit:100}//to limit the number of documents returned
+
+
+6. $unwind  stage
+
+Group aggregation on arrays
+
+Group stage only on arrays will result in array with unwanted values
+
+{$unwind:"$tags"}
+
+
+7. $sum $avg $max $min (accumulators are only used in the group stage)
+
+{group:{_id:{age:"$age",},count:{$sum,1}}} // outputs the total count in each group 
+
+{group:{_id:{age:"$age",},sum:{$sum,"$quantity"}}}
+{group:{_id:{age:"$age",},average:{$avg,"$quantity"}}}
+{group:{_id:{age:"$age",},max:{$max,"$quantity"}}}
+{group:{_id:{age:"$age",},min:{$min,"$quantity"}}}
+
+8. Unary operators are often used in the project stage
+
+$type $or $lt $gt $and $multiply
+
+
+9. $out stage
+
+To store output documents to a new collection
+
+{$out:"newcollection"}
+
+
+Unary operators vs accumulators
+
+Accumulators are operated on group of documents ,because they accumulate.
+
+Unary operators are used on the single document.
+
+Logical operators are 
+
+* and ,or, not,nor
+
+
+{$and:[{age:$gt:25},{age:$lt:29}]}
+
+{$or:[{age:$eq:25},{age:$eq:29}]}
+
+{age:{$not:{$gt:22}}}
+
+ { $nor: [ { price: 1.99 }, { sale: true } ]  } 
+
+
+* $expr is used to find documents that has expression comparisons rather than fixed values
+
+db.monthlyBudget.find( { $expr: { $gt: [ "$spent" , "$budget" ] } } )
+
+* $cond is used for conditional operations
+
+* $elemMatch is used to find array with atleast one element which matches the set of conditons
+
+* $size is used to find the documents which has an array field of size specified 
+
+db.collection.find( { field: { $size: 1 } } );
+
+
+//------------------------------------------------------------------------------------------------------------------------------------
