@@ -1,7 +1,9 @@
 import { useState, type ChangeEvent } from "react";
 import "./App.css";
+
 function App() {
     const [country, setCountry] = useState<string[]>([]);
+
     const cities = [
         "New York",
         "London",

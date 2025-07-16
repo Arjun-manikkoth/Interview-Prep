@@ -1,24 +1,39 @@
 Process:-
 
-A process is an instance of a running program .js runtime and libuv which is being executed.Process is a global bobject in node js that provides information about , and control over, the current node.js process.
+A process is an instance of a running program .js runtime and libuv which is being executed.Process is a global object in node js that provides information about , and control over, the current node.js process.
 Process has its own memory ,created when node file.js is ran , works independently.Processes communicate through inter-process communication (IPC) mechanisms.
 eg:- process.event
-     process.pid 
+     process.pid  
 
 Threads(worker thread):-
 
 Threads is a smaller unit of execution within a process.
 Worker threads are used to run heavy computational tasks(sync) without blocking the main thread.
-Each worker has its own js heap and event loop 
-Worker thread creates a new main thread which works paralelly with seperate instance.
-It communicate with the process through messages.
-Threads share the same memory space and resources of the process(parent) they belong to.
+Each worker has its own  js heap and event loop 
+Worker thread creates a seperate thread which works paralelly independently inside the same process.
+It communicate with the process through messages and shared memory.
+Threads share the same memory space and resources of the process(parent) they belong to and it has its own memory as well.
 In Node.js, you can create multiple threads within a process using the worker_threads module.
 
 
+In node js the child process are created to run blocking tasks without interrupting the primary/parent process as a seperate process.
+
 Child process:- 
 
-Node js can spawn additional process(using child_process) .
-they are seperate instances of node js that runs concurrently and communicate with the parent process.
+Child process are specifically used for running high computational and blocking tasks seperately from the parent process.
+Node js can spawn additional process(using child_process).
+they are seperate instances of node js that runs paralelly and communicate with the parent process.
 
+
+Spawn:- 
+
+Spawn method creates a new process with a seperate thread which can execute both node js scripts and external commands which are responsible for communicating with the external systems.
+only new v8 instace is created for nodejs scripts only not for external commands so nodejs instance with a new thread will be there.
+It communicates with the parent process through standard i/o streams.
+
+Fork:- 
+
+Fork is a special method of spawn which is used to create child process to execute node js scripts
+It creates a seperate instance with a new main thread.
+It default uses IPC channel to interact with parent process.
 

@@ -10,7 +10,6 @@ Features of JS:-
 * Client side scripting (runs on client browser without needing to communicate with the server)
 * Event driven (Can respond to user actions in real time)
 
-
 Programming Paradigmas in Javascript
 
 * Imperative Programming (The how): Focuses on how to perform tasks by controlling the flow of computation.This includes procedural and object-oriented programming,often using constructs like async/await to handle async actions
@@ -23,6 +22,7 @@ Applications of JS
 * Web development
 * Web applications
 * Server applications
+
 
 Limitations of JS
 
@@ -137,26 +137,7 @@ Enabling strict mode offers several benefits:
 
 * Prevents the use of this in functions called as regular functions (not as methods or constructors), which can avoid unexpected behavior.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----------------------------------------------------------------------------------------------------------------------
-
-
+------------------------------------------------------------------------------------------------------------------------- 
 
 * Operator precedence in JS
 
@@ -236,7 +217,6 @@ Simulate block-scoping before let and const existed
 Implement certain design patterns like currying and memoization
 
 
-
 --------------------------------------------------------------------------------------------------------------------
 
 
@@ -273,3 +253,6 @@ Reason 1: Not repeated in multiple code files
 → In future, if more keys are added or object keys are modified changing in one place will be easier instead of doing it in multiple places in files.
 
 Reason 2: Single Source of Truth in one file
+
+
+

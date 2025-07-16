@@ -11,11 +11,11 @@ const car = { type: "Fiat", model: "500", color: "white" };
 
 //** SEAL :- prevents object from addition as well a removal */
 
-// Object.seal(car);
-// console.log(Object.isSealed(car));
-// car.model = "600";
-// car.height = 23;
-// console.log(car);
+Object.seal(car);
+console.log(Object.isSealed(car));
+car.model = "600";
+car.height = 23;
+console.log(car);
 
 //** FREEZE :- prevents object from adding ,removing ,editing  */
 
