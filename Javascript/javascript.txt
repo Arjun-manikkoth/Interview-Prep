@@ -6,7 +6,7 @@ Features of JS:-
 * Sychronous (completes one task at a time)
 * Single threaded (One thread for execution)
 * Weakly/Dynamically typed (Data type assigned at run time)
-* Interpretor (transpiles and executes line by line)
+* Interpretor (transpiles and executes line by line) uses just in time compilation
 * Client side scripting (runs on client browser without needing to communicate with the server)
 * Event driven (Can respond to user actions in real time)
 

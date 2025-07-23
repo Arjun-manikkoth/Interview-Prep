@@ -1,3 +1,143 @@
+What is node js?
+
+Node js is open source ,cross platform runtime environment for javascript allow developers to run javascript outside their broswers.
+Features :-
+
+* Non-Blocking i/o
+* Event driven
+* Single threaded
+* Asynchronous
+
+
+What is a blocking?
+
+A task is said to be blocking when it stops the thread from executing other tasks and make it wait until the current task is completed.
+
+
+what is a non blocking task?
+
+A task is said to be non blocking when it can execute other tasks without having to wait for the completion of the current task.and it can process task in the background.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Process:-
 
 A process is an instance of a running program .js runtime and libuv which is being executed.Process is a global object in node js that provides information about , and control over, the current node.js process.
@@ -9,7 +149,7 @@ Threads(worker thread):-
 
 Threads is a smaller unit of execution within a process.
 Worker threads are used to run heavy computational tasks(sync) without blocking the main thread.
-Each worker has its own  js heap and event loop 
+Each worker has its own  js heap and event loop
 Worker thread creates a seperate thread which works paralelly independently inside the same process.
 It communicate with the process through messages and shared memory.
 Threads share the same memory space and resources of the process(parent) they belong to and it has its own memory as well.
@@ -36,4 +176,12 @@ Fork:-
 Fork is a special method of spawn which is used to create child process to execute node js scripts
 It creates a seperate instance with a new main thread.
 It default uses IPC channel to interact with parent process.
+
+
+Stream:-
+
+Stream is an abstract interface for handling with streaming data.
+Instead of sending the data as a huge bundle the data is often send as packets/chunks.
+
+
 

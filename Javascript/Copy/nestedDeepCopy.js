@@ -1,6 +1,7 @@
 //Implement a deep clone function in JavaScript that creates a copy of a nested object
 // or array without any reference to the original.
 //we can use either stringify and parse or structuredclone to create deepcopy
+
 const obj = {
     name: "arjun",
     address: {

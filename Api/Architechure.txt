@@ -1,0 +1,18 @@
+REST API
+
+* architechural design 
+* Json data exchange
+* Statelessness (Each request contain all the information to process it)
+* Client - Server architechure (Seperates client and server)
+* Uniform interface (uses a route format)
+* Cacheability (responses stored on cient side to reuse responses by improving performance and server load)
+
+SOAP API 
+
+Protocol for structured data transfer
+XML based transferring
+Statelessness
+Better security
+
+
+

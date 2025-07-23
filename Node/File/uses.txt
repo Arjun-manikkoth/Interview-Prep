@@ -1,0 +1,4 @@
+Read or write configuration files
+Log files to track app events
+File uploads
+Data processing of large datasets

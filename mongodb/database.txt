@@ -3,6 +3,7 @@ A database is an organised collection of data for efficient retrieval and storag
 
 
 what is dbms?
+
 dbms is a software which acts as an interface by connecting the users and the database by providing features like update add delete and limit user access.
 
 Relational(sql - Tabular database) vs non relational databases(nosql - different data models)?
@@ -93,6 +94,7 @@ Mongodb traditionally doesnot support joins but now allows joins using lookup in
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🏗️ How MongoDB Handles Millions of Incoming API Requests
+
 MongoDB is designed for high concurrency and horizontal scalability. Here's how it deals with massive loads:
 
 🚀 Efficient Indexing
@@ -213,7 +215,6 @@ courses collection :-
 }
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 Views
 

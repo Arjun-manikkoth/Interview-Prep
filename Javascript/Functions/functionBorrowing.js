@@ -16,7 +16,7 @@ const object = { firstName: "arjun", lastName: "manikkoth" };
 
 //** APPLY :- similar to the call function with first argument as the object and next arguments as an array */
 
-// console.log(person.fullName.apply(object, ["aka", "smes"]));
+//console.log(person.fullName.apply(object, ["aka", "smes"]));
 
 //----------------------------------------------------------------------------------------------------------------
 

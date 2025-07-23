@@ -6,6 +6,7 @@ const Person = function Person(name, age) {
     this.name = name;
     this.age = age;
 };
+
 Person.prototype.height = 12;
 const obj1 = new Person("arjun", 23);
 console.log(obj1);
