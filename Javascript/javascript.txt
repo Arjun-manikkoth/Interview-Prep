@@ -1,5 +1,7 @@
 What is javascript ?
+
  Javascript is a programming language used to create interactive webpages with dynamic content updates.
+
 
 Features of JS:-
 
@@ -16,7 +18,7 @@ Programming Paradigmas in Javascript
 
 * Declarative Programming (The what) : Focuses on what should be done rather than how it is done.It emphasizes describing the desired result, such as with arrow functions, without detailing the steps to achieve it 
 
-
+ 
 Applications of JS
 
 * Web development
@@ -47,7 +49,8 @@ Datatypes in JS (9)
         Bigint (2^53-1)
         null
         undefined
-
+        
+        
 typeof : operator to determine type, eg:- typeof str
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,7 +80,6 @@ var :
 -------------------------------------------------------------------------------------------------------------------
 
 What is hoisting?
-
 Hoisting in JavaScript is a behavior where variable and function declarations are moved to the top of their scope
 before code execution. This means that you can use variables and functions before they are declared in your code without causing an error. 
 

@@ -1,6 +1,6 @@
 what is a database?
-A database is an organised collection of data for efficient retrieval and storage.
 
+A database is an organised collection of data for efficient retrieval and storage.
 
 what is dbms?
 
@@ -14,20 +14,21 @@ Data is stored in a tabular format
 Vertically scalable
 Strict schema
 
+
 Nonrelational:-
 
-Data is stored in other formats like graphs ,key value pairs,documents
+Data is stored in other formats like graphs,key value pairs,documents
 Horizontally scalable
 Flexible schema
 
 -----------------------------------------------------------------------------------------------------------------------------
 
 What are capped collections?
+
 Capped collections are basically fixed size collections.
 Creating a capped collection in MongoDB involves using the createCollection() method to define a collection with a fixed size and a maximum number of documents. Capped collections automatically overwrite old documents when they reach their size limit, making them ideal for use cases like logging or caching where the most recent data is most important.
 
 quick revision mongodb refer :- ht"remove this"tps://dev.to/msn2106/revise-all-basics-of-mongodb-in-10-minutes-d1g
-
 
 what is mongodb?
 
@@ -140,7 +141,7 @@ there is 100 mb limit for each stage if it exceeds this ram capacity it will thr
 
 What is cursor in mongodb?
 
-A cursor is an obect returned by operations like find() that references a set of documents matching a query. Instead of returning whole documents , it is returned as batches (basically cursor is pointer which points to the loation of each documents).
+A cursor is an object returned by operations like find() that references a set of documents matching a query. Instead of returning whole documents , it is returned as batches (basically cursor is pointer which points to the loation of each documents).
 here mongodb itself iterates automatically through the cursor and return documents...else we have to do it as manual.(cursor is discarded after 10 minutes)
 
 

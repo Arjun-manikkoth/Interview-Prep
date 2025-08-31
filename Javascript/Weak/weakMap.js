@@ -30,3 +30,5 @@ console.log(weakMap);
 
 //use case
 //* caching ()
+
+///weak map and weak set doesnt have size property

@@ -1,7 +1,9 @@
 import "./App.css";
 import useCounter from "./hook";
+
 function App() {
     const [count, increment] = useCounter();
+
     return (
         <>
             <div>count:{count}</div>

@@ -45,7 +45,7 @@ db.users.aggregate([{ $group: { _id: "favoriteFruit", count: { $sum: 1 } } }]);
 db.users.aggregate([{ $unwind: "$tags" }, { $group: { _id: "$tags", count: { $sum: 1 } } }]);
 
 // Average calculation
-db.users.aggregate([{ $group: { _id: "$favoriteFruit", avgAge: { $avg: "$age" } } }]);
+db.users.aggregate([{ $group: { _id: "$favoriteFruit ", avgAge: { $avg: "$age" } } }]);
 
 // Type determination
 db.users.aggregate([

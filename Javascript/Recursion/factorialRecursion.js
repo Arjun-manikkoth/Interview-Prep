@@ -1,7 +1,12 @@
 function factorial(n) {
-    if (n < 2) {
-        return 1;
+    if (n === 1) {
+        return n;
     }
     return n * factorial(n - 1);
 }
+
 console.log(factorial(5));
+
+// print the factorial of a number
+
+// 5*4*3*2*1

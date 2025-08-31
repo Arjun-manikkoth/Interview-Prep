@@ -30,4 +30,5 @@ function timer(limit) {
         }
     }, 1000);
 }
+
 timer(5);

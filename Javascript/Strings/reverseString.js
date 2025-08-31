@@ -3,7 +3,7 @@ let str = "arjun villa";
 //normal reversal
 
 function reverseString(str) {
-    strArr = str.split("");
+    let strArr = str.split("");
 
     for (let i = 0, j = strArr.length - 1; i < Math.floor(strArr.length / 2); i++, j--) {
         temp = strArr[i];
