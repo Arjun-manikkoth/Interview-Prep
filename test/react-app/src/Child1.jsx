@@ -12,6 +12,7 @@ function Child1() {
             <button onClick={() => value.setState("data from child1")}>
                 Child1 button for test
             </button>
+            <button onClick={() => value.setState("data from child1")}>Dummy button updated</button>
         </>
     );
 }
