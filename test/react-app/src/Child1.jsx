@@ -9,7 +9,7 @@ function Child1() {
 
             {value.state}
 
-            <button onClick={() => value.setState("data from child1")}>Child1 button</button>
+            <button onClick={() => value.setState("data from child1")}>Child1 buttons</button>
         </>
     );
 }
